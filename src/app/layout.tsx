@@ -19,7 +19,7 @@ export default function RootLayout({
   session: any;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={inter.className}>{children}</body>
     </html>
   );
