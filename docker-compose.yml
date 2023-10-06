@@ -1,0 +1,19 @@
+version: '3.8'
+name: production
+services:
+  scrum-board-production:
+    container_name: scrum-board-production
+    image: anicmarko9/scrum-board-production:1.1
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - prod
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+networks:
+  prod:
+    name: prod

@@ -1,0 +1,23 @@
+version: '3.8'
+name: development
+services:
+  scrum-board:
+    container_name: scrum-board
+    image: anicmarko9/scrum-board:1.2
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    networks:
+      - dev
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+networks:
+  dev:
+    name: dev
