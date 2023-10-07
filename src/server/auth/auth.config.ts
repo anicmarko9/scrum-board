@@ -1,18 +1,12 @@
-import { type NextAuthOptions } from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
-import { TypeORMAdapter } from '@auth/typeorm-adapter';
+import { PrismaAdapter } from '@auth/prisma-adapter';
+import { type NextAuthOptions } from 'next-auth';
 
-import { dataSourceConfig } from '@Database/datasource.config';
+import { prisma } from '@Server/db';
 
 export const authOptions: NextAuthOptions = {
-  // callbacks: {
-  //   session({ session, user }) {
-  //     if (session.user) session.user.id = user.id;
-  //     return session;
-  //   },
-  // },
-  adapter: TypeORMAdapter(dataSourceConfig),
+  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       allowDangerousEmailAccountLinking: true,
@@ -26,4 +20,10 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    session({ session, user }) {
+      if (session.user) session.user.id = user.id;
+      return session;
+    },
+  },
 };
