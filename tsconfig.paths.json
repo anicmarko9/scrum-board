@@ -4,11 +4,11 @@
     "paths": {
       "@/*": ["./src/*"],
       "@App/*": ["./src/app/*"],
+      "@Components/*": ["./src/components/*"],
       "@Api/*": ["./src/app/api/*"],
       "@Context/*": ["./src/context/*"],
       "@Server/*": ["./src/server/*"],
-      "@Auth/*": ["./src/server/auth/*"],
-      "@Database/*": ["./src/server/database/*"]
+      "@Auth/*": ["./src/server/auth/*"]
     }
   }
 }
