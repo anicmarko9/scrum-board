@@ -5,7 +5,10 @@
       "@/*": ["./src/*"],
       "@App/*": ["./src/app/*"],
       "@Api/*": ["./src/app/api/*"],
-      "@Context/*": ["./src/context/*"]
+      "@Context/*": ["./src/context/*"],
+      "@Server/*": ["./src/server/*"],
+      "@Auth/*": ["./src/server/auth/*"],
+      "@Database/*": ["./src/server/database/*"]
     }
   }
 }
