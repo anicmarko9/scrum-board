@@ -13,7 +13,9 @@ COPY --from=dependencies /home/app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV production
+RUN npm run prisma:generate
 RUN npm run build
+
 
 ## Runner
 FROM node:20-alpine AS runner
