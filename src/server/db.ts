@@ -1,14 +1,10 @@
 import { PrismaClient } from '@prisma/client';
-import type {
-  PrismaClientOptions,
-  DefaultArgs,
-} from '@prisma/client/runtime/library';
 
 declare global {
-  var prisma: PrismaClient<PrismaClientOptions, never, DefaultArgs> | undefined;
+  var prisma: PrismaClient | undefined;
 }
 
-export const prisma: PrismaClient<PrismaClientOptions, never, DefaultArgs> =
+export const prisma: PrismaClient =
   global.prisma ||
   new PrismaClient({
     log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
