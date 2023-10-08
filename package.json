@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && prisma generate && prisma migrate deploy",
+    "build": "prisma generate && prisma migrate deploy && next build",
     "start": "next start",
     "typecheck": "tsc",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,css}\"",
