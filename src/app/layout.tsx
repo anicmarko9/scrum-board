@@ -1,10 +1,25 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { type Metadata } from 'next';
+import { type ReactNode } from 'react';
+import { type Session } from 'next-auth';
 
 import './globals.css';
-import Provider from '@Context/ClientProvider';
+import AuthProvider from '@Client/AuthProvider';
 
-const inter = Inter({ subsets: ['latin'] });
+export default function RootLayout({
+  children,
+  session,
+}: {
+  children: ReactNode;
+  session: Session;
+}): ReactNode {
+  return (
+    <html lang='en'>
+      <body className='bg-darkerBG'>
+        <AuthProvider session={session}>{children}</AuthProvider>
+      </body>
+    </html>
+  );
+}
 
 export const metadata: Metadata = {
   title: 'Scrum Board',
@@ -19,19 +34,3 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   publisher: 'Vercel',
 };
-
-export default function RootLayout({
-  children,
-  session,
-}: {
-  children: React.ReactNode;
-  session: any;
-}): React.ReactNode {
-  return (
-    <html lang='en'>
-      <body className={inter.className}>
-        <Provider session={session}>{children}</Provider>
-      </body>
-    </html>
-  );
-}

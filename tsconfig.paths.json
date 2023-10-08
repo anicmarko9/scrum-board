@@ -6,7 +6,7 @@
       "@App/*": ["./src/app/*"],
       "@Components/*": ["./src/components/*"],
       "@Api/*": ["./src/app/api/*"],
-      "@Context/*": ["./src/context/*"],
+      "@Client/*": ["./src/client/*"],
       "@Server/*": ["./src/server/*"],
       "@Auth/*": ["./src/server/auth/*"]
     }
