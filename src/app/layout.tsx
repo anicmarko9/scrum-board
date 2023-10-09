@@ -1,5 +1,5 @@
-import { type Metadata } from 'next';
 import { type ReactNode } from 'react';
+import { type Metadata } from 'next';
 import { type Session } from 'next-auth';
 
 import './globals.css';
@@ -11,7 +11,7 @@ export default function RootLayout({
 }: {
   children: ReactNode;
   session: Session;
-}): ReactNode {
+}): JSX.Element {
   return (
     <html lang='en'>
       <body className='bg-darkerBG'>
