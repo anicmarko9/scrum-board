@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Layout from '@Layout/Layout';
 
 export default function Home(): JSX.Element {
   return (
-    <main>
+    <Layout>
       <h1>Home Page</h1>
-    </main>
+    </Layout>
   );
 }
