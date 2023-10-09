@@ -4,6 +4,7 @@ import { type Session } from 'next-auth';
 
 import './globals.css';
 import AuthProvider from '@Client/AuthProvider';
+import { api } from '@/utils/api';
 
 export default function RootLayout({
   children,
@@ -20,6 +21,8 @@ export default function RootLayout({
     </html>
   );
 }
+
+// api.withTRPC(RootLayout);
 
 export const metadata: Metadata = {
   title: 'Scrum Board',
