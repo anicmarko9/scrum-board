@@ -1,5 +1,5 @@
-import { publicProcedure, createTRPCRouter } from '../trpc.context';
+import { publicProcedure, createTRPCRouter } from '@Api/trpc.context';
 
 export const authRouter = createTRPCRouter({
-  hello: publicProcedure.query(() => 'Hello World'),
+  hello: publicProcedure.query(() => 'Hello World!'),
 });

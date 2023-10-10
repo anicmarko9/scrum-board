@@ -1,10 +1,18 @@
-import SideMenu from '@/components/layout/SideMenu';
-import Layout from '@Layout/Layout';
+'use client';
 
-export default function Home(): JSX.Element {
+import Layout from '@Layout/Layout';
+import { api } from '@Lib/api';
+
+function Home(): JSX.Element {
+  const hello = api.hello.useQuery();
+
+  const data = hello.data;
+  console.log(data);
   return (
     <Layout>
-      <h1>Home Page</h1>
+      <h1>{data}</h1>
     </Layout>
   );
 }
+
+export default api.withTRPC(Home);

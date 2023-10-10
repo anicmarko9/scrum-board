@@ -3,7 +3,7 @@ import { type Session } from 'next-auth';
 import { initTRPC, TRPCError } from '@trpc/server';
 import superjson from 'superjson';
 
-import { prisma } from '@Server/database.client';
+import { prisma } from '@Server/database.prisma';
 import { auth } from '@Auth/auth.session';
 
 type CreateContextOptions = {

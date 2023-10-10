@@ -1,12 +1,13 @@
-import { createNextApiHandler } from '@trpc/server/adapters/next';
+import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 
-import { type AppRouter, appRouter } from '@Server/api/app.router';
-import { createTRPCContext } from '@Server/api/trpc.context';
+import { type AppRouter, appRouter } from '@Api/app.router';
 
-const handler = (req: Request) =>
-  createNextApiHandler<AppRouter>({
+const handler = (req: Request): Promise<Response> =>
+  fetchRequestHandler<AppRouter>({
+    endpoint: '/api/trpc',
+    req,
     router: appRouter,
-    createContext: createTRPCContext,
+    createContext: () => ({}) as any,
     onError:
       process.env.NODE_ENV === 'development'
         ? ({ path, error }) => {
