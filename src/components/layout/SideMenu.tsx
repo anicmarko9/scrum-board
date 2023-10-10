@@ -30,7 +30,7 @@ export default function SideMenu(): JSX.Element {
         aria-label='Sidebar'
       >
         <div className='h-full overflow-y-auto bg-gray-50 px-3 py-4 dark:bg-white'>
-          <ul className='space-y-2 font-medium'>
+          <ul className=' space-y-2 font-medium'>
             <li className='flex items-center justify-between'>
               <button className='rounded-full bg-black p-4 text-white'>
                 ORG
@@ -40,10 +40,12 @@ export default function SideMenu(): JSX.Element {
               </button>
             </li>
           </ul>
+          <div className='flex flex-col items-center justify-center'>
+            <button className='w-9/10 fixed bottom-0   bg-black p-4 text-white'>
+              +CREATE NEW BOARD
+            </button>
+          </div>
         </div>
-        <button className='absolute bottom-0 w-full  bg-black p-4  text-white'>
-          Your Button Text
-        </button>
       </aside>
     </div>
   );
