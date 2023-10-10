@@ -3,7 +3,7 @@ import { createTRPCNext } from '@trpc/next';
 import { type inferRouterInputs, type inferRouterOutputs } from '@trpc/server';
 import superjson from 'superjson';
 
-import { type AppRouter } from '@Server/api/app.router';
+import { type AppRouter } from '@Api/app.router';
 
 const getBaseUrl = (): string =>
   typeof window !== 'undefined'

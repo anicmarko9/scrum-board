@@ -6,10 +6,11 @@
       "@App/*": ["./src/app/*"],
       "@Components/*": ["./src/components/*"],
       "@Layout/*": ["./src/components/layout/*"],
-      "@Api/*": ["./src/app/api/*"],
-      "@Client/*": ["./src/client/*"],
+      "@Lib/*": ["./src/lib/*"],
       "@Server/*": ["./src/server/*"],
-      "@Auth/*": ["./src/server/auth/*"]
+      "@Api/*": ["./src/server/api/*"],
+      "@Auth/*": ["./src/server/auth/*"],
+      "@Types/*": ["./src/types/*"]
     }
   }
 }
