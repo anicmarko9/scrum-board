@@ -8,7 +8,7 @@ export default function OrganizationLayout({
   children: ReactNode;
 }): JSX.Element {
   return (
-    <main>
+    <main className='flex h-[2000px]'>
       <SideMenu />
       {children}
     </main>
