@@ -1,3 +1,7 @@
 export default function Organization(): JSX.Element {
-  return <h1>Organization Page</h1>;
+  return (
+    <section>
+      <h1>Organization Page</h1>
+    </section>
+  );
 }
