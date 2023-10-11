@@ -7,7 +7,7 @@ function Home(): JSX.Element {
   const hello = api.hello.useQuery();
 
   const data = hello.data;
-  console.log(data);
+
   return (
     <Layout>
       <h1>{data}</h1>
