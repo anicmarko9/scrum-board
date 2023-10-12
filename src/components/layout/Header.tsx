@@ -33,10 +33,10 @@ export default function Header(): JSX.Element {
         </ul>
         <ul className='flex items-center'>
           <li className='mr-2 rounded-full px-4 py-2 text-sm font-bold text-white hover:bg-gray-400'>
-            <Link href='#'>Log in</Link>
+            <Link href='/signin'>Log in</Link>
           </li>
           <li className='rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 text-sm font-bold text-white'>
-            <Link href='/register'>Sign up</Link>
+            <Link href='/signup'>Sign up</Link>
           </li>
         </ul>
       </nav>
