@@ -3,7 +3,7 @@
 import Layout from '@Layout/Layout';
 import { api } from '@Lib/api';
 
-function Home(): JSX.Element {
+function Page(): JSX.Element {
   const hello = api.hello.useQuery();
 
   const data = hello.data;
@@ -15,4 +15,4 @@ function Home(): JSX.Element {
   );
 }
 
-export default api.withTRPC(Home);
+export default api.withTRPC(Page);

@@ -1,12 +1,13 @@
 'use client';
 
 import { api } from '@Lib/api';
+import SignIn from '@Components/auth/SignIn';
 
 function Page(): JSX.Element {
   return (
-    <section>
-      <h1>Organization Page</h1>
-    </section>
+    <main>
+      <SignIn />
+    </main>
   );
 }
 

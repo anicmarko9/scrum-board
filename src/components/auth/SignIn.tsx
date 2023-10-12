@@ -1,7 +1,6 @@
-import React from 'react';
-import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
-const page = () => {
+export default function SignIn(): JSX.Element {
   return (
     <div className='bg-grey-lighter flex min-h-screen flex-col'>
       <div className='container mx-auto flex max-w-sm flex-1 flex-col items-center justify-center px-2'>
@@ -47,7 +46,7 @@ const page = () => {
         </div>
 
         <div className='text-grey-dark mt-6'>
-          Don't have account?
+          Don&apos;t have account?
           <a
             className='border-blue text-blue border-b no-underline'
             href='../register/'
@@ -59,6 +58,4 @@ const page = () => {
       </div>
     </div>
   );
-};
-
-export default page;
+}
