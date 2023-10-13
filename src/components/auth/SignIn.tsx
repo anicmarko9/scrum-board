@@ -1,61 +1,49 @@
-import { FaGoogle, FaGithub } from 'react-icons/fa';
+import Link from 'next/link';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
-export default function SignIn(): JSX.Element {
+export default function SignUp(): JSX.Element {
   return (
-    <div className='bg-grey-lighter flex min-h-screen flex-col'>
-      <div className='container mx-auto flex max-w-sm flex-1 flex-col items-center justify-center px-2'>
-        <div className='w-full rounded bg-white px-6 py-8 text-black shadow-md'>
-          <h1 className='mb-8 text-center text-3xl'>Login</h1>
-
-          <input
-            type='text'
-            className='border-grey-light mb-4 block w-full rounded border p-3'
-            name='email'
-            placeholder='Email'
-          />
-
-          <input
-            type='password'
-            className='border-grey-light mb-4 block w-full rounded border p-3'
-            name='password'
-            placeholder='Password'
-          />
-
-          <button
-            type='button'
-            className='my-2 flex w-full items-center justify-center rounded-lg  bg-red-600 px-4 py-2 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2  focus:ring-offset-red-200 '
-          >
-            <FaGoogle size={'2em'} className='mx-3' />
-            Sign in with Google
-          </button>
-
-          <button
-            type='button'
-            className='my-2 flex w-full items-center justify-center rounded-lg  bg-gray-600 px-4 py-2 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2  focus:ring-offset-gray-200 '
-          >
-            <FaGithub size={'2em'} className='mx-3' />
-            Sign in with GitHub
-          </button>
-
-          <button
-            type='submit'
-            className='hover:bg-green-dark my-1 w-full rounded bg-black py-3 text-center text-white focus:outline-none'
-          >
-            Login
-          </button>
-        </div>
-
-        <div className='text-grey-dark mt-6'>
-          Don&apos;t have account?
-          <a
-            className='border-blue text-blue border-b no-underline'
-            href='../register/'
-          >
-            Sign up
-          </a>
-          .
-        </div>
-      </div>
-    </div>
+    <section className='flex flex-col items-center justify-center space-y-4 rounded-lg bg-lighterBG px-12 py-8 text-secondary'>
+      <h2 className='w-64 p-2 text-center text-3xl'>Login</h2>
+      <input
+        type='email'
+        className='w-64 rounded border border-secondary border-opacity-30 px-4 py-2'
+        name='email'
+        placeholder='Email'
+      />
+      <input
+        type='password'
+        className='w-64 rounded border border-secondary border-opacity-30 px-4 py-2'
+        name='password'
+        placeholder='Password'
+      />
+      <button
+        type='submit'
+        className='flex w-64 items-center justify-center rounded border border-white border-opacity-30 bg-black px-4 py-2 text-white'
+      >
+        Sign In
+      </button>
+      <hr className='w-full border-black' />
+      <button
+        type='button'
+        className='flex w-64 items-center justify-center rounded border border-white border-opacity-30 bg-red-600 px-4 py-2 text-white'
+      >
+        <FaGoogle className='mr-3 h-5 w-5' />
+        Sign In with Google
+      </button>
+      <button
+        type='button'
+        className='flex w-64 items-center justify-center rounded border border-white border-opacity-30 bg-gray-700 px-4 py-2 text-white'
+      >
+        <FaGithub className='mr-3 h-5 w-5' />
+        Sign In with GitHub
+      </button>
+      <nav className='flex w-64 items-center justify-evenly'>
+        <span>Don&apos;t have an account?</span>
+        <Link className='text-accent' href='../signup'>
+          Sign Up
+        </Link>
+      </nav>
+    </section>
   );
 }
