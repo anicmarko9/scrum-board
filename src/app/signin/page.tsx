@@ -5,7 +5,7 @@ import SignIn from '@Components/auth/SignIn';
 
 function Page(): JSX.Element {
   return (
-    <main>
+    <main className='flex min-h-screen items-center justify-center'>
       <SignIn />
     </main>
   );
