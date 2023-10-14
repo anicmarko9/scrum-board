@@ -1,20 +1,12 @@
 'use client';
 
-import LandingPage from '@/components/LandingPage';
+import LandingPage from '@Components/LandingPage';
 import Layout from '@Layout/Layout';
-import { api } from '@Lib/api';
 
-function Page(): JSX.Element {
-  const hello = api.hello.useQuery();
-
-  const data = hello.data;
-
+export default function Page(): JSX.Element {
   return (
     <Layout>
-      <h1>{data}</h1>
       <LandingPage />
     </Layout>
   );
 }
-
-export default api.withTRPC(Page);
