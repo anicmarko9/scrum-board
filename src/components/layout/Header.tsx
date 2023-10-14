@@ -8,7 +8,7 @@ export default function Header(): JSX.Element {
         <figure className='flex items-center'>
           <Image src='/logo-2.png' alt='Logo' width={40} height={40} />
           <figcaption className='ml-3 whitespace-nowrap text-xl font-semibold text-white'>
-            Flowbite
+            Scrum Board
           </figcaption>
         </figure>
         <ul className='hidden font-medium lg:flex lg:space-x-8'>
