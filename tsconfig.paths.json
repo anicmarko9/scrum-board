@@ -10,7 +10,8 @@
       "@Server/*": ["./src/server/*"],
       "@Api/*": ["./src/server/api/*"],
       "@Auth/*": ["./src/server/auth/*"],
-      "@Types/*": ["./src/types/*"]
+      "@Types/*": ["./src/types/*"],
+      "@Utils/*": ["./src/utils/*"]
     }
   }
 }

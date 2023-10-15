@@ -14,13 +14,3 @@ export default function OrganizationLayout({
     </main>
   );
 }
-
-// this is something like:
-// <main>
-//   <aside>
-//     content...
-//   </aside>
-//   <section>
-//     content...
-//   </section>
-// </main>
