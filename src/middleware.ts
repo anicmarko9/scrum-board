@@ -1,21 +1,20 @@
-import { getToken } from 'next-auth/jwt';
-import { NextRequest, NextResponse } from 'next/server';
+import { withAuth } from 'next-auth/middleware';
 
-const requireAuth: string[] = ['/protected'];
-export async function middleware(request: NextRequest) {
-  const res = NextResponse.next();
-  const pathname = request.nextUrl.pathname;
-  if (requireAuth.some((path) => pathname.startsWith(path))) {
-    const token = await getToken({
-      req: request,
-      secret: process.env.SECRET,
-    });
-    //check not logged in
-    if (!token) {
-      const url = new URL(`/signin`, request.url);
-      url.searchParams.set('callbackUrl', encodeURI(request.url));
-      return NextResponse.redirect(url);
-    }
-  }
-  return res;
-}
+export default withAuth({
+  callbacks: {
+    authorized({ req }) {
+      let token: string | undefined;
+      if (req.cookies.get('jwtClient')) {
+        token = req.cookies.get('jwtClient')?.value;
+      } else if (req.cookies.get('next-auth.session-token')) {
+        token = req.cookies.get('next-auth.session-token')?.value;
+      } else return false;
+      return !!token;
+    },
+  },
+  pages: {
+    signIn: '/login',
+  },
+});
+
+export const config = { matcher: ['/organization/:path*'] };
