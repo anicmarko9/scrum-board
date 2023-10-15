@@ -1,9 +1,15 @@
 import Link from 'next/link';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { useSession } from 'next-auth/react';
+import { redirect } from 'next/navigation';
 
 import { handleProviderLogin } from '@Utils/auth';
 
 export default function SignUp(): JSX.Element {
+  const { data: session, status } = useSession<boolean>();
+
+  if (session && status === 'authenticated') redirect('/organization');
+
   return (
     <section className='flex flex-col items-center justify-center space-y-4 rounded-lg bg-lighterBG px-12 py-8 text-secondary'>
       <h2 className='w-64 p-2 text-center text-3xl'>Register</h2>
