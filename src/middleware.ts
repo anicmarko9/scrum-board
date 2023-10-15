@@ -8,6 +8,8 @@ export default withAuth({
         token = req.cookies.get('jwtClient')?.value;
       } else if (req.cookies.get('next-auth.session-token')) {
         token = req.cookies.get('next-auth.session-token')?.value;
+      } else if (req.cookies.get('__Secure-next-auth.session-token')) {
+        token = req.cookies.get('__Secure-next-auth.session-token')?.value;
       } else return false;
       return !!token;
     },
