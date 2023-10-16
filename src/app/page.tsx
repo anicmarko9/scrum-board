@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 
 import LandingPage from '@Components/LandingPage';
 import Layout from '@Layout/Layout';
+import KanbanBoard from '@/components/Board/KanbanBoard';
 
 export default function Page(): JSX.Element {
   const { data: session, status } = useSession<boolean>();
@@ -14,6 +15,7 @@ export default function Page(): JSX.Element {
   return (
     <Layout>
       <LandingPage />
+      <KanbanBoard />
     </Layout>
   );
 }
