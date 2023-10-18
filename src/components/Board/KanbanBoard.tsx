@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Column, Id, Task } from '../../types/board-types';
 import ColumnContainer from './ColumnContainer';
 import {
@@ -13,8 +13,8 @@ import {
 } from '@dnd-kit/core';
 import { SortableContext, arrayMove } from '@dnd-kit/sortable';
 import { createPortal } from 'react-dom';
+
 import TaskCard from './TaskCard';
-import { FaPlus } from 'react-icons/fa';
 
 const defaultCols: Column[] = [
   {
@@ -95,6 +95,33 @@ function KanbanBoard() {
     }),
   );
 
+  useEffect(() => {
+    {
+      createPortal(
+        <DragOverlay>
+          {activeColumn && (
+            <ColumnContainer
+              column={activeColumn}
+              createTask={createTask}
+              deleteTask={deleteTask}
+              updateTask={updateTask}
+              tasks={tasks.filter((task) => task.columnId === activeColumn.id)}
+            />
+          )}
+          {activeTask && (
+            <TaskCard
+              task={activeTask}
+              deleteTask={deleteTask}
+              updateTask={updateTask}
+            />
+          )}
+        </DragOverlay>,
+        document.body,
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div
       className='
@@ -130,30 +157,6 @@ function KanbanBoard() {
             </SortableContext>
           </div>
         </div>
-
-        {createPortal(
-          <DragOverlay>
-            {activeColumn && (
-              <ColumnContainer
-                column={activeColumn}
-                createTask={createTask}
-                deleteTask={deleteTask}
-                updateTask={updateTask}
-                tasks={tasks.filter(
-                  (task) => task.columnId === activeColumn.id,
-                )}
-              />
-            )}
-            {activeTask && (
-              <TaskCard
-                task={activeTask}
-                deleteTask={deleteTask}
-                updateTask={updateTask}
-              />
-            )}
-          </DragOverlay>,
-          document.body,
-        )}
       </DndContext>
     </div>
   );
