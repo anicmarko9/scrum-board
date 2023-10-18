@@ -3,7 +3,7 @@
 import { signOut } from 'next-auth/react';
 
 import { api } from '@Lib/api';
-import KanbanBoard from '@Components/board/KanbanBoard';
+import KanbanBoard from '@/components/board/KanbanBoard';
 
 function Page(): JSX.Element {
   return (
