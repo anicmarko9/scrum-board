@@ -1,11 +1,10 @@
-import { SortableContext, useSortable } from '@dnd-kit/sortable';
-
-import { Column, Id, Task } from '../../types/board-types';
-import { CSS } from '@dnd-kit/utilities';
 import { useMemo, useState } from 'react';
+import { SortableContext, useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import { FaPlus } from 'react-icons/fa';
 
+import { Column, Id, Task } from '@Types/board-types';
 import TaskCard from './TaskCard';
-import { FaPlus, FaTrash } from 'react-icons/fa';
 
 interface Props {
   column: Column;

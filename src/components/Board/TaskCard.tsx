@@ -1,9 +1,9 @@
 import { useState } from 'react';
-
-import { Id, Task } from '../../types/board-types';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { FaTrash } from 'react-icons/fa';
+
+import { Id, Task } from '@Types/board-types';
 
 interface Props {
   task: Task;

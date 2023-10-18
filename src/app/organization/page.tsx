@@ -3,11 +3,12 @@
 import { signOut } from 'next-auth/react';
 
 import { api } from '@Lib/api';
+import KanbanBoard from '@Components/board/KanbanBoard';
 
 function Page(): JSX.Element {
   return (
     <section className='flex w-full flex-col items-center justify-center space-y-4 px-12 py-8 text-secondary'>
-      <h1>Organization Page</h1>
+      <KanbanBoard />
       <button
         type='button'
         onClick={() => void signOut({ callbackUrl: '/' })}
