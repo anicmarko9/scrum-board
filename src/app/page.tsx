@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation';
 
 import Layout from '@Layout/Layout';
 import LandingPage from '@Components/LandingPage';
-import Loading from '@/components/layout/Loading';
 
 export default function Page(): JSX.Element {
   const { data: session, status } = useSession<boolean>();
@@ -14,7 +13,6 @@ export default function Page(): JSX.Element {
 
   return (
     <Layout>
-      <Loading />
       <LandingPage />
     </Layout>
   );
