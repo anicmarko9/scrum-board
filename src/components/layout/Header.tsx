@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { type AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
 export default function Header(): JSX.Element {
+  const router: AppRouterInstance = useRouter();
+
   return (
     <header>
       <nav className='flex items-center justify-between border-gray-200 bg-gradient-to-r from-lighterBG via-darkerBG to-lighterBG px-4 py-2 text-secondary shadow-sm lg:px-16'>
@@ -32,11 +36,17 @@ export default function Header(): JSX.Element {
           </li>
         </ul>
         <ul className='flex items-center text-white'>
-          <li className='mr-2 rounded-full border bg-secondary px-4 py-2 text-sm font-bold transition duration-300 ease-in-out hover:border-secondary hover:bg-lighterBG hover:text-secondary'>
-            <Link href='/login'>Log in</Link>
+          <li
+            onClick={(): void => router.push('/login')}
+            className='mr-2 cursor-pointer rounded-full border bg-secondary px-4 py-2 text-sm font-bold transition duration-300 ease-in-out hover:border-secondary hover:bg-lighterBG hover:text-secondary'
+          >
+            Log in
           </li>
-          <li className='rounded-full border bg-secondary px-4 py-2 text-sm font-bold transition duration-300 ease-in-out hover:border-secondary hover:bg-lighterBG hover:text-secondary'>
-            <Link href='/signup'>Sign up</Link>
+          <li
+            onClick={(): void => router.push('/sign-up')}
+            className='cursor-pointer rounded-full border bg-secondary px-4 py-2 text-sm font-bold transition duration-300 ease-in-out hover:border-secondary hover:bg-lighterBG hover:text-secondary'
+          >
+            Sign up
           </li>
         </ul>
       </nav>

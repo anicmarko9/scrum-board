@@ -15,18 +15,21 @@ export default function SignIn(): JSX.Element {
       <h2 className='w-64 p-2 text-center text-3xl'>Login</h2>
       <input
         type='email'
+        disabled
         className='w-64 rounded border border-secondary border-opacity-30 px-4 py-2'
         name='email'
         placeholder='Email'
       />
       <input
         type='password'
+        disabled
         className='w-64 rounded border border-secondary border-opacity-30 px-4 py-2'
         name='password'
         placeholder='Password'
       />
       <button
         type='submit'
+        disabled
         className='flex w-64 items-center justify-center rounded border border-white border-opacity-30 bg-black px-4 py-2 text-white'
       >
         Sign In
@@ -50,7 +53,7 @@ export default function SignIn(): JSX.Element {
       </button>
       <nav className='flex w-64 items-center justify-evenly'>
         <span>Don&apos;t have an account?</span>
-        <Link className='text-accent' href='../signup'>
+        <Link className='text-accent' href='../sign-up'>
           Sign Up
         </Link>
       </nav>
