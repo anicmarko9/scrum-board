@@ -12,7 +12,9 @@ export default function Layout({
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className='flex h-[600px] flex-col items-center justify-center space-y-4 p-4 text-secondary sm:space-y-8 sm:p-8 md:space-y-12 md:p-12 lg:p-16 xl:p-20 2xl:p-24'>
+        {children}
+      </main>
       <Footer />
     </>
   );
