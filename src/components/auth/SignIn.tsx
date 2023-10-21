@@ -38,22 +38,25 @@ export default function SignIn(): JSX.Element {
       <button
         type='button'
         onClick={() => void handleProviderLogin('google')}
-        className='flex w-64 items-center justify-center rounded border border-white border-opacity-30 bg-red-600 px-4 py-2 text-white'
+        className='from-darkerRed to-lighterRed hover:border-customRed hover:text-customRed flex w-64 items-center justify-center rounded border border-white border-opacity-30 bg-gradient-to-r px-4 py-2 font-bold text-white transition duration-500 ease-in-out hover:bg-gradient-to-r hover:from-white hover:to-white'
       >
-        <FaGoogle className='mr-3 h-5 w-5' />
-        Sign In with Google
+        <FaGithub className='mr-3 h-5 w-5' />
+        <span>Sign In with Google</span>
       </button>
       <button
         type='button'
         onClick={() => void handleProviderLogin('github')}
-        className='flex w-64 items-center justify-center rounded border border-white border-opacity-30 bg-gray-700 px-4 py-2 text-white'
+        className='from-darkerBlue to-lighterBlue hover:border-customBlue hover:text-customBlue flex w-64 items-center justify-center rounded border border-white border-opacity-30 bg-gradient-to-r px-4 py-2 font-bold text-white transition duration-500 ease-in-out hover:bg-gradient-to-r hover:from-white hover:to-white'
       >
-        <FaGithub className='mr-3 h-5 w-5' />
-        Sign In with GitHub
+        <FaGoogle className='mr-3 h-5 w-5' />
+        <span>Sign In with GitHub</span>
       </button>
       <nav className='flex w-64 items-center justify-evenly'>
         <span>Don&apos;t have an account?</span>
-        <Link className='text-accent' href='../sign-up'>
+        <Link
+          className='text-accent transition duration-500 ease-in-out hover:text-secondary'
+          href='../sign-up'
+        >
           Sign Up
         </Link>
       </nav>
