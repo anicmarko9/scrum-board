@@ -15,24 +15,28 @@ export default function SignUp(): JSX.Element {
       <h2 className='w-64 p-2 text-center text-3xl'>Register</h2>
       <input
         type='email'
+        disabled
         className='w-64 rounded border border-secondary border-opacity-30 px-4 py-2'
         name='email'
         placeholder='Email'
       />
       <input
         type='password'
+        disabled
         className='w-64 rounded border border-secondary border-opacity-30 px-4 py-2'
         name='password'
         placeholder='Password'
       />
       <input
         type='password'
+        disabled
         className='w-64 rounded border border-secondary border-opacity-30 px-4 py-2'
         name='confirm_password'
         placeholder='Confirm Password'
       />
       <button
         type='submit'
+        disabled
         className='flex w-64 items-center justify-center rounded border border-white border-opacity-30 bg-black px-4 py-2 text-white'
       >
         Sign Up

@@ -17,7 +17,7 @@ export default function LandingPage(): JSX.Element {
       </p>
       <button
         onClick={(): void => router.push('/organization')}
-        className='flex w-fit items-center justify-center space-x-4 self-center rounded-full border bg-secondary px-4 py-2 text-lg font-bold text-white transition duration-300 ease-in-out hover:border-secondary hover:bg-lighterBG hover:text-secondary'
+        className='flex w-fit items-center justify-center space-x-4 self-center rounded-full border border-secondary bg-secondary px-4 py-2 text-lg font-bold text-white transition duration-300 ease-in-out hover:bg-lighterBG hover:text-secondary'
       >
         <span className='block'>Get Started</span>
         <FaArrowRight size='24' />
