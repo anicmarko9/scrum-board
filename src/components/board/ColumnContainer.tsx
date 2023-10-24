@@ -55,18 +55,7 @@ function ColumnContainer({
       <div
         ref={setNodeRef}
         style={style}
-        className='
-      bg-columnBackgroundColor
-      flex
-      h-[500px]
-      max-h-[500px]
-      w-[250px]
-      flex-col
-      rounded-md
-      border-2
-      border-pink-500
-      opacity-40
-      '
+        className='flex h-[500px] w-[250px] flex-col rounded-md border-2 border-secondary opacity-50'
       ></div>
     );
   }
@@ -75,17 +64,8 @@ function ColumnContainer({
     <div
       ref={setNodeRef}
       style={style}
-      className='
-  bg-columnBackgroundColor
-  flex
-  h-[500px]
-  max-h-[500px]
-  w-[250px]
-  flex-col
-  rounded-md
-  '
+      className='flex h-[500px] w-[250px] flex-col rounded-md'
     >
-      {/* Column title */}
       <div
         {...attributes}
         {...listeners}
@@ -93,9 +73,6 @@ function ColumnContainer({
           setEditMode(true);
         }}
         className='
-      bg-mainBackgroundColor
-      text-md
-      border-columnBackgroundColor
       flex
       h-[60px]
       cursor-grab
@@ -111,7 +88,6 @@ function ColumnContainer({
         <div className='flex gap-2'>
           <div
             className='
-        bg-columnBackgroundColor
         flex
         items-center
         justify-center
@@ -156,7 +132,7 @@ function ColumnContainer({
       </div>
       {/* Column footer */}
       <button
-        className='border-columnBackgroundColor border-x-columnBackgroundColor hover:bg-mainBackgroundColor flex items-center gap-2 rounded-md border-2 p-4 hover:text-rose-500 active:bg-black'
+        className='flex items-center gap-2 rounded-md border-2 p-4 hover:text-rose-500 active:bg-black'
         onClick={() => {
           createTask(column.id);
         }}
