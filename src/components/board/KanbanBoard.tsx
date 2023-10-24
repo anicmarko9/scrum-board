@@ -123,42 +123,27 @@ function KanbanBoard() {
   }, []);
 
   return (
-    <div
-      className='
-        m-auto
-        flex
-        min-h-screen
-        w-full
-        items-center
-        overflow-x-auto
-        overflow-y-hidden
-        px-[40px]
-    '
+    <DndContext
+      sensors={sensors}
+      onDragStart={onDragStart}
+      onDragEnd={onDragEnd}
+      onDragOver={onDragOver}
     >
-      <DndContext
-        sensors={sensors}
-        onDragStart={onDragStart}
-        onDragEnd={onDragEnd}
-        onDragOver={onDragOver}
-      >
-        <div className='m-auto flex gap-4'>
-          <div className='flex gap-4'>
-            <SortableContext items={columnsId}>
-              {columns.map((col) => (
-                <ColumnContainer
-                  key={col.id}
-                  column={col}
-                  createTask={createTask}
-                  deleteTask={deleteTask}
-                  updateTask={updateTask}
-                  tasks={tasks.filter((task) => task.columnId === col.id)}
-                />
-              ))}
-            </SortableContext>
-          </div>
-        </div>
-      </DndContext>
-    </div>
+      <div className='flex flex-wrap gap-2'>
+        <SortableContext items={columnsId}>
+          {columns.map((col) => (
+            <ColumnContainer
+              key={col.id}
+              column={col}
+              createTask={createTask}
+              deleteTask={deleteTask}
+              updateTask={updateTask}
+              tasks={tasks.filter((task) => task.columnId === col.id)}
+            />
+          ))}
+        </SortableContext>
+      </div>
+    </DndContext>
   );
 
   function createTask(columnId: Id) {

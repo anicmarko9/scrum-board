@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaPlus } from 'react-icons/fa';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 
 import LoadingImage from '@Components/LoadingImage';
 
@@ -11,7 +11,7 @@ export default function SideMenu(): JSX.Element {
   const { data: session, status } = useSession<boolean>();
 
   return (
-    <aside className='sticky left-0 top-0 flex h-screen w-[200px] flex-col bg-gray-50 p-4 lg:w-[300px]'>
+    <aside className='sticky left-0 top-0 flex h-screen min-w-[200px] flex-col bg-gray-50 p-4 lg:min-w-[300px]'>
       <nav className='flex w-full items-center justify-between text-xs lg:text-base'>
         <Link
           href='/organization'
@@ -25,6 +25,7 @@ export default function SideMenu(): JSX.Element {
             alt={'User Profile Photo'}
             width={48}
             height={48}
+            onClick={() => void signOut({ callbackUrl: '/' })}
             className='flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-black uppercase text-white'
           />
         ) : (
