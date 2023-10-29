@@ -1,7 +1,7 @@
 'use client';
 
 import UserSettings from '@/components/UserSettings/UserSettings';
-import Layout from '@/components/layout/Layout';
+import Layout from '@Layout/Layout';
 
 const page = () => {
   return (

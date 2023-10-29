@@ -1,13 +1,15 @@
-import React from 'react';
+import Image from 'next/image';
 
 const UserSettings = () => {
   return (
     <div className='mx-auto flex w-[500px] items-center space-x-4 rounded-xl bg-white p-6 shadow-md'>
       <div className='flex-shrink-0'>
-        <img
+        <Image
           className='h-12 w-12'
-          src='https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg'
+          src='/../user/user-icon.png'
           alt='ChitChat Logo'
+          width={50}
+          height={50}
         />
       </div>
       <div>
@@ -24,7 +26,7 @@ const UserSettings = () => {
             <input
               className='rounded-lg border border-gray-300 p-2'
               type='text'
-              id='nickname'
+              id='old-password'
             />
           </div>
           <div className='mb-4 flex flex-col'>
@@ -37,7 +39,7 @@ const UserSettings = () => {
             <input
               className='rounded-lg border border-gray-300 p-2'
               type='password'
-              id='password'
+              id='new-password'
             />
             <label
               className='mb-2 text-sm font-medium text-gray-600'
@@ -48,7 +50,7 @@ const UserSettings = () => {
             <input
               className='rounded-lg border border-gray-300 p-2'
               type='password'
-              id='password'
+              id='repeat-password'
             />
           </div>
 
