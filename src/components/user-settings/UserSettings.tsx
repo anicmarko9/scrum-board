@@ -6,7 +6,7 @@ export default function UserSettings(): JSX.Element {
       <div className='flex-shrink-0'>
         <Image
           className='h-12 w-12'
-          src='/../user/user-icon.png'
+          src='/user/user-icon.png'
           alt='ChitChat Logo'
           width={50}
           height={50}
@@ -67,7 +67,10 @@ export default function UserSettings(): JSX.Element {
               id='photo'
             />
           </div>
-          <button className='rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700'>
+          <button
+            type='submit'
+            className='rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700'
+          >
             Save Changes
           </button>
         </form>

@@ -19,10 +19,10 @@ export default function Task(props: Props): JSX.Element {
           <FaCheck className='mx-auto'></FaCheck>
         </div>
       </div>
-      <div className='col-start-4 col-end-12 my-4 mr-auto w-full rounded-xl bg-green-500 p-4 shadow-md'>
-        <h3 className='mb-1 text-lg font-semibold'>{status}</h3>
-        <p className='text-justify leading-tight'>{date}</p>
-      </div>
+      <section className='col-start-4 col-end-12 my-4 mr-auto w-full rounded-xl bg-green-500 p-4 shadow-md'>
+        <h3 className='text-lg'>{status}</h3>
+        <time dateTime={date}>{date}</time>
+      </section>
     </div>
   );
 }
