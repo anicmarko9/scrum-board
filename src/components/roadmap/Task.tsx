@@ -6,7 +6,9 @@ type Props = {
   date: string;
 };
 
-const Task = (props: Props) => {
+export default function Task(props: Props): JSX.Element {
+  const { status, date } = props;
+
   return (
     <div className='flex md:contents'>
       <div className='relative col-start-2 col-end-4 mr-10 md:mx-auto'>
@@ -17,12 +19,10 @@ const Task = (props: Props) => {
           <FaCheck className='mx-auto'></FaCheck>
         </div>
       </div>
-      <div className='col-start-4 col-end-12 my-4 mr-auto w-full rounded-xl bg-green-500 p-4 shadow-md'>
-        <h3 className='mb-1 text-lg font-semibold'>{props.status}</h3>
-        <p className='text-justify leading-tight'>{props.date}</p>
-      </div>
+      <section className='col-start-4 col-end-12 my-4 mr-auto w-full rounded-xl bg-green-500 p-4 shadow-md'>
+        <h3 className='text-lg'>{status}</h3>
+        <time dateTime={date}>{date}</time>
+      </section>
     </div>
   );
-};
-
-export default Task;
+}

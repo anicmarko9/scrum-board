@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-const UserSettings = () => {
+export default function UserSettings(): JSX.Element {
   return (
     <div className='mx-auto flex w-[500px] items-center space-x-4 rounded-xl bg-white p-6 shadow-md'>
       <div className='flex-shrink-0'>
         <Image
           className='h-12 w-12'
-          src='/../user/user-icon.png'
+          src='/user/user-icon.png'
           alt='ChitChat Logo'
           width={50}
           height={50}
@@ -67,13 +67,14 @@ const UserSettings = () => {
               id='photo'
             />
           </div>
-          <button className='rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700'>
+          <button
+            type='submit'
+            className='rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700'
+          >
             Save Changes
           </button>
         </form>
       </div>
     </div>
   );
-};
-
-export default UserSettings;
+}
