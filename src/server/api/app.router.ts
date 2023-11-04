@@ -1,8 +1,8 @@
-import { authRouter } from './routers/auth.router';
 import { createTRPCRouter } from './trpc.context';
+import { organizationRouter } from './routers/organization.router';
 
 export const appRouter = createTRPCRouter({
-  hello: authRouter.hello,
+  organization: organizationRouter,
 });
 
 export type AppRouter = typeof appRouter;
