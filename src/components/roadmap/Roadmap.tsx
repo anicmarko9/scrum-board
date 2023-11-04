@@ -1,4 +1,4 @@
-import Task from '@Components/roadmap/Task';
+import Task from './Task';
 
 export default function Roadmap(): JSX.Element {
   return (
