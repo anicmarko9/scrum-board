@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { type AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { FaArrowRight } from 'react-icons/fa';
+import Issue from '@Components/Issues';
 
 export default function LandingPage(): JSX.Element {
+  const [showPopup, setShowPopup] = useState(false);
   const router: AppRouterInstance = useRouter();
 
   return (
@@ -22,6 +25,13 @@ export default function LandingPage(): JSX.Element {
         <span className='block'>Get Started</span>
         <FaArrowRight size='24' />
       </button>
+
+      <button
+        onClick={(): void => setShowPopup(true)}
+        className='flex w-fit items-center justify-center space-x-4 self-center rounded-full border border-secondary bg-secondary px-4 py-2 text-lg font-bold text-white transition duration-300 ease-in-out hover:bg-lighterBG hover:text-secondary' >
+        <span className='block'>Create Issue</span>
+      </button>
+{showPopup && <Issue onClose={():void => setShowPopup(false)} />}
     </>
   );
 }
