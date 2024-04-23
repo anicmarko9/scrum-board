@@ -8,12 +8,11 @@ import LandingPage from '@Components/LandingPage';
 
 export default function Page(): JSX.Element {
   const { data: session, status } = useSession<boolean>();
-
   if (session && status === 'authenticated') redirect('/organization');
 
   return (
     <Layout>
       <LandingPage />
-    </Layout>
+    </Layout> 
   );
 }
